@@ -5,6 +5,7 @@ plugins {
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
 	kotlin("jvm") version "1.6.0"
 	kotlin("plugin.spring") version "1.6.0"
+	jacoco
 }
 
 group = "sh.antisla.grm"
@@ -42,4 +43,19 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+	finalizedBy(tasks.jacocoTestReport) // report is always generated after tests run
+}
+
+//Jacoco configuration
+tasks.jacocoTestReport {
+	dependsOn(tasks.test) // tests are required to run before generating the report
+	reports {
+		xml.required.set(false)
+		csv.required.set(false)
+	}
+}
+
+jacoco {
+	// You may modify the Jacoco version here
+	toolVersion = "0.8.7"
 }
