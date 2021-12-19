@@ -1,0 +1,5 @@
+server:
+  port: 9999
+springdoc:
+  packagesToScan: sh.antisla.grm.heatmanager.application.rest
+  pathsToMatch: /api/v1/**
