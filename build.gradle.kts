@@ -31,8 +31,10 @@ repositories {
     mavenCentral()
 }
 
+val assert4jVersion by extra { "3.22.0" }
 val h2Version by extra { "2.1.210" }
 val liquibaseVersion by extra { "3.8.2" }
+val mockitoKotlinVersion by extra { "4.0.0" }
 val postgresqlVersion by extra { "42.3.1" }
 val snakeYamlVersion by extra { "1.30" }
 val springBootVersion by extra { "2.6.3" }
@@ -53,6 +55,7 @@ dependencies {
     // Liquibase
     implementation("org.liquibase:liquibase-core:${liquibaseVersion}")
     implementation("org.yaml:snakeyaml:${snakeYamlVersion}")
+    implementation("org.junit.jupiter:junit-jupiter:5.8.1")
     runtimeOnly("org.postgresql:postgresql:${postgresqlVersion}")
 
     // Tools
@@ -62,6 +65,8 @@ dependencies {
     // Test
     testImplementation("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
     testImplementation("com.h2database:h2:${h2Version}")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:${mockitoKotlinVersion}")
+    testImplementation("org.assertj:assertj-core:${assert4jVersion}")
 }
 
 tasks.withType<KotlinCompile> {
