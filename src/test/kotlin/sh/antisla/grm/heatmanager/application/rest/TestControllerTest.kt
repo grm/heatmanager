@@ -16,10 +16,10 @@ internal class TestControllerTest {
     fun `devrait revoyer ok`() {
         // Given/When/Then
         mockMvc
-                .perform(MockMvcRequestBuilders.get("/api/v1/test"))
-                .andExpect(MockMvcResultMatchers.status().isOk)
-                .andExpect(
-                        MockMvcResultMatchers.content().string("ok"))
-
+            .perform(MockMvcRequestBuilders.get("/api/v1/test"))
+            .andExpect(MockMvcResultMatchers.status().isOk)
+            .andExpect(
+                MockMvcResultMatchers.content().string("ok")
+            )
     }
 }

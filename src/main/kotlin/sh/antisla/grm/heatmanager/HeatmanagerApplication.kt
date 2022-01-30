@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class HeatmanagerApplication
 
 fun main(args: Array<String>) {
-	runApplication<HeatmanagerApplication>(*args)
+    runApplication<HeatmanagerApplication>(*args)
 }
