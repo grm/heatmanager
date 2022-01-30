@@ -12,10 +12,12 @@ class SwaggerConfiguration {
     @Bean
     fun springShopOpenAPI(): OpenAPI? {
         return OpenAPI()
-                .info(Info().title("HeatManager API")
-                        .description("HeatManager to manage multiprupose thermostat")
-                        .version("v0.0.1")
-                        .license(License().name("Apache 2.0").url("http://springdoc.org")))
+            .info(
+                Info().title("HeatManager API")
+                    .description("HeatManager to manage many thermostat")
+                    .version("v0.0.1")
+                    .license(License().name("Apache 2.0").url("http://springdoc.org"))
+            )
 //                .externalDocs(ExternalDocumentation()
 //                        .description("SpringShop Wiki Documentation")
 //                        .url("https://springshop.wiki.github.org/docs"))

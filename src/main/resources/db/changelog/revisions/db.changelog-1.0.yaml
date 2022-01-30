@@ -1,0 +1,16 @@
+databaseChangeLog:
+  -  changeSet:
+       id:  1
+       author:  grm
+       changes:
+         -  createTable:
+              tableName:  room
+              columns:
+                -  column:
+                     name:  id
+                     type:  uuid
+                     constraints:
+                       primaryKey:  true
+                -  column:
+                     name:  name
+                     type:  varchar(255)

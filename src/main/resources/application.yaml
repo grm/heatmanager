@@ -1,5 +1,10 @@
 server:
   port: 9999
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/heatmanager
+    username: heatmanager
+    password: heatmanager
 springdoc:
   packagesToScan: sh.antisla.grm.heatmanager.application.rest
   pathsToMatch: /api/v1/**
